@@ -31,6 +31,6 @@ const Image = () => (
 
 const Title = () => <h1>Titulo del libro</h1>
 
-const Author = () => <h4>Autor anonimo</h4>
+const Author = () => <h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}>Autor anonimo</h4>
 
 ReactDom.render(<BookList />, document.getElementById('root'));
