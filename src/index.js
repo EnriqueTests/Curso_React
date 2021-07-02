@@ -1,18 +1,32 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>john doe</h2>;
-const Message = () => {
-  return <p>this is my message</p>;
+const Book = () => {
+  return (
+    <article>
+      <Image></Image>
+      <Title />
+      <Author />
+    </article>
+  )
 };
 
-ReactDom.render(<Greeting />, document.getElementById('root'));
+const Image = () => (
+  <img src="https://www.ecured.cu/images/8/81/Libro_abierto.jpg" alt="" />
+);
+
+const Title = () => <h1>Titulo del libro</h1>
+
+const Author = () => <h4>Autor anonimo</h4>
+
+ReactDom.render(<BookList />, document.getElementById('root'));
