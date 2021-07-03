@@ -6,31 +6,24 @@ function BookList() {
   return (
     <section className="booklist">
       <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   );
 }
 
+const author = 'Autor anonimo';
 const Book = () => {
+  const title = 'Titulo del libro';
   return (
     <article className='book'>
-      <Image></Image>
-      <Title />
-      <Author />
+        <img 
+        src="https://www.ecured.cu/images/8/81/Libro_abierto.jpg" 
+        alt="" 
+        />
+      <h1>{title}</h1>
+      <h4>{author.toUpperCase()}</h4>
+      <p>{6 + 6}</p>
     </article>
   )
 };
-
-const Image = () => (
-  <img src="https://www.ecured.cu/images/8/81/Libro_abierto.jpg" alt="" />
-);
-
-const Title = () => <h1>Titulo del libro</h1>
-
-const Author = () => <h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}>Autor anonimo</h4>
 
 ReactDom.render(<BookList />, document.getElementById('root'));
