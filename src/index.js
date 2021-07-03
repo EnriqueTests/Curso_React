@@ -1,27 +1,40 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-
 import './index.css';
+
+const firstBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/41gLTMZk62L._SX333_BO1,204,203,200_.jpg',
+  title: 'Titulo del libro 1',
+  author: 'Autor anonimo 1',
+};
+
+const secondBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/41gLTMZk62L._SX333_BO1,204,203,200_.jpg',
+  title: 'Titulo del libro 2',
+  author: 'Autor anonimo 2',
+};
+
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
+      <Book 
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author} />
+      <Book
+      img={secondBook.img}
+      title={secondBook.title}
+      author={secondBook.author} />
     </section>
   );
 }
 
-const author = 'Autor anonimo';
-const Book = () => {
-  const title = 'Titulo del libro';
+const Book = (props) => {
   return (
     <article className='book'>
-        <img 
-        src="https://www.ecured.cu/images/8/81/Libro_abierto.jpg" 
-        alt="" 
-        />
-      <h1>{title}</h1>
-      <h4>{author.toUpperCase()}</h4>
-      <p>{6 + 6}</p>
+      <img src={props.img} alt="" />
+      <h1>{props.title}</h1>
+      <h4>{props.author}</h4>
     </article>
   )
 };
