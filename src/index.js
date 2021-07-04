@@ -9,25 +9,32 @@ const books = [
     author: 'Autor anonimo 1',
   },
   {
-    img: 'https://images-na.ssl-images-amazon.com/images/I/41gLTMZk62L._SX333_BO1,204,203,200_.jpg',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/41WOfByjSPL._SX331_BO1,204,203,200_.jpg',
     title: 'Titulo del libro 2',
     author: 'Autor anonimo 2',
   },
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/41NfAUwZbeL._SX308_BO1,204,203,200_.jpg',
+    title: 'Titulo del libro 3',
+    author: 'Autor anonimo 3',
+  },
 ];
 
-const names = ['john', 'peter', 'susan'];
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>
-});
-
-console.log(newNames);
-
 function BookList() {
-  return <section className="booklist">{newNames}</section>;
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return (
+          <Book book={book}></Book>
+        );
+      })}
+    </section>
+  );
 }
 
 const Book = (props) => {
-  const {img, title, author } = props;
+  console.log(props);
+  const { img, title, author } = props.book;
 
   return (
     <article className='book'>
